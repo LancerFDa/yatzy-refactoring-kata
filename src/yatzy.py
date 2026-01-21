@@ -14,20 +14,15 @@ class Yatzy:
         return 0
 
     @staticmethod
-    def ones(d1, d2, d3, d4, d5):
+    def ones(die_one, die_two, die_three, die_four, die_five):
         sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1):
-            sum += 1
-
+        dice_combination = [die_one, die_two, die_three, die_four, die_five]
+        for i, j in enumerate(dice_combination):
+            if dice_combination[i] == 1:
+                i += 1
+                sum += 1
         return sum
+
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):

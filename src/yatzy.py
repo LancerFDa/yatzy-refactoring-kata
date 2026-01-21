@@ -35,19 +35,14 @@ class Yatzy:
         return chance_score
 
     @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
+    def threes(die_one, die_two, die_three, die_four, die_five):
+        chance_score = 0
+        dice_combination = [die_one, die_two, die_three, die_four, die_five]
+        for i, j in enumerate(dice_combination):
+            if dice_combination[i] == 3:
+                i += 1
+                chance_score += 3
+        return chance_score
 
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5

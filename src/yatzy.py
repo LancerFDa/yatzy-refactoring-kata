@@ -2,8 +2,8 @@ class Yatzy:
 
     @staticmethod
     def chance(die_one, die_two, die_three, die_four, die_five):
-        total_score = die_one + die_two + die_three + die_four + die_five
-        return total_score
+        chance_score = die_one + die_two + die_three + die_four + die_five
+        return chance_score
 
     @staticmethod
     def yatzy(dice):
@@ -15,29 +15,24 @@ class Yatzy:
 
     @staticmethod
     def ones(die_one, die_two, die_three, die_four, die_five):
-        sum = 0
+        chance_score = 0
         dice_combination = [die_one, die_two, die_three, die_four, die_five]
         for i, j in enumerate(dice_combination):
             if dice_combination[i] == 1:
                 i += 1
-                sum += 1
-        return sum
+                chance_score += 1
+        return chance_score
 
 
     @staticmethod
-    def twos(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 2):
-            sum += 2
-        if (d2 == 2):
-            sum += 2
-        if (d3 == 2):
-            sum += 2
-        if (d4 == 2):
-            sum += 2
-        if (d5 == 2):
-            sum += 2
-        return sum
+    def twos(die_one, die_two, die_three, die_four, die_five):
+        chance_score = 0
+        dice_combination = [die_one, die_two, die_three, die_four, die_five]
+        for i, j in enumerate(dice_combination):
+            if dice_combination[i] == 2:
+                i += 1
+                chance_score += 2
+        return chance_score
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):

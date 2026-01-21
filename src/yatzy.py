@@ -1,9 +1,9 @@
 class Yatzy:
 
     @staticmethod
-    def chance(dice1, dice2, dice3, dice4, dice5):
-        total = dice1 + dice2 + dice3 + dice4 + dice5
-        return total
+    def chance(die1, die2, die3, die4, die5):
+        total_score = die1 + die2 + die3 + die4 + die5
+        return total_score
 
     @staticmethod
     def yatzy(dice):

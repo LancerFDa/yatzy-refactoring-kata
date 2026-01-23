@@ -1,10 +1,19 @@
 class Yatzy:
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def chance(die_one, die_two, die_three, die_four, die_five):
         chance_score = die_one + die_two + die_three + die_four + die_five
         return chance_score
 
+    
+    '''
+    The rutine was too long
+    '''
     @staticmethod
     def yatzy(dice):
         if not dice:
@@ -13,6 +22,11 @@ class Yatzy:
             return 50
         return 0
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def ones(die_one, die_two, die_three, die_four, die_five):
         chance_score = 0
@@ -24,6 +38,10 @@ class Yatzy:
         return chance_score
 
 
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def twos(die_one, die_two, die_three, die_four, die_five):
         chance_score = 0
@@ -34,6 +52,11 @@ class Yatzy:
                 chance_score += 2
         return chance_score
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def threes(die_one, die_two, die_three, die_four, die_five):
         chance_score = 0
@@ -133,6 +156,11 @@ class Yatzy:
                 return (i + 1) * 3
         return 0
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def small_straight(dice_one, dice_two, dice_three, dice_four, dice_five):
         sorted_dice_conbination = sorted([dice_one, dice_two, dice_three, dice_four, dice_five])
@@ -140,6 +168,11 @@ class Yatzy:
             return 15
         return 0
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def large_straight(dice_one, dice_two, dice_three, dice_four, dice_five):
         sorted_dice_conbination = sorted([dice_one, dice_two, dice_three, dice_four, dice_five])

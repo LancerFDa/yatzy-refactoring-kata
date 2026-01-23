@@ -7,8 +7,8 @@ class Yatzy:
     The rutine was too long
     '''
     @staticmethod
-    def chance(die_one, die_two, die_three, die_four, die_five):
-        chance_score = die_one + die_two + die_three + die_four + die_five
+    def chance(*dice):
+        chance_score = sum(dice)
         return chance_score
 
     

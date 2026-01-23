@@ -1,3 +1,4 @@
+from src.pips import Pips
 class Yatzy:
 
 
@@ -23,18 +24,13 @@ class Yatzy:
         return 0
 
 
-    '''
-    Rename a variable with a clearer name
-    The rutine was too long
-    '''
     @staticmethod
-    def ones(die_one, die_two, die_three, die_four, die_five):
+    def calculate_points(pips, *dice):
         chance_score = 0
-        dice_combination = [die_one, die_two, die_three, die_four, die_five]
-        for i, j in enumerate(dice_combination):
-            if dice_combination[i] == 1:
+        for i, j in enumerate(dice):
+            if dice[i] == pips:
                 i += 1
-                chance_score += 1
+                chance_score += pips
         return chance_score
 
 
@@ -43,14 +39,8 @@ class Yatzy:
     The rutine was too long
     '''
     @staticmethod
-    def twos(die_one, die_two, die_three, die_four, die_five):
-        chance_score = 0
-        dice_combination = [die_one, die_two, die_three, die_four, die_five]
-        for i, j in enumerate(dice_combination):
-            if dice_combination[i] == 2:
-                i += 1
-                chance_score += 2
-        return chance_score
+    def ones(*dice):
+        return Yatzy.calculate_points(Pips.ONE, *dice)
 
 
     '''
@@ -58,14 +48,17 @@ class Yatzy:
     The rutine was too long
     '''
     @staticmethod
-    def threes(die_one, die_two, die_three, die_four, die_five):
-        chance_score = 0
-        dice_combination = [die_one, die_two, die_three, die_four, die_five]
-        for i, j in enumerate(dice_combination):
-            if dice_combination[i] == 3:
-                i += 1
-                chance_score += 3
-        return chance_score
+    def twos(*dice):
+        return Yatzy.calculate_points(Pips.TWO, *dice)
+
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @staticmethod
+    def threes(*dice):
+        return Yatzy.calculate_points(Pips.THREE, *dice)
 
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5

@@ -40,7 +40,7 @@ class Yatzy:
     '''
     @staticmethod
     def ones(*dice):
-        return Yatzy.calculate_points(Pips.ONE, *dice)
+        return Yatzy.calculate_points(Pips.ONE.value, *dice)
 
 
     '''
@@ -49,7 +49,7 @@ class Yatzy:
     '''
     @staticmethod
     def twos(*dice):
-        return Yatzy.calculate_points(Pips.TWO, *dice)
+        return Yatzy.calculate_points(Pips.TWO.value, *dice)
 
 
     '''
@@ -58,7 +58,7 @@ class Yatzy:
     '''
     @staticmethod
     def threes(*dice):
-        return Yatzy.calculate_points(Pips.THREE, *dice)
+        return Yatzy.calculate_points(Pips.THREE.value, *dice)
 
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5

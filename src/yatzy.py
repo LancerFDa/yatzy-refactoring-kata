@@ -150,28 +150,32 @@ class Yatzy:
         return 0
 
 
-    '''
-    Rename a variable with a clearer name
-    The rutine was too long
-    '''
     @staticmethod
-    def small_straight(dice_one, dice_two, dice_three, dice_four, dice_five):
-        sorted_dice_conbination = sorted([dice_one, dice_two, dice_three, dice_four, dice_five])
-        if sorted_dice_conbination == [1, 2, 3, 4, 5]:
+    def calculate_straights(*dice):
+        sorted_dice = sorted(dice)
+        if sorted_dice == [1, 2, 3, 4, 5]:
             return 15
-        return 0
-
-
-    '''
-    Rename a variable with a clearer name
-    The rutine was too long
-    '''
-    @staticmethod
-    def large_straight(dice_one, dice_two, dice_three, dice_four, dice_five):
-        sorted_dice_conbination = sorted([dice_one, dice_two, dice_three, dice_four, dice_five])
-        if sorted_dice_conbination == [2, 3, 4, 5, 6]:
+        if sorted_dice == [2, 3, 4, 5, 6]:
             return 20
         return 0
+
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @staticmethod
+    def small_straight(*dice):
+        return Yatzy.calculate_straights(*dice)
+
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @staticmethod
+    def large_straight(*dice):
+        return Yatzy.calculate_straights(*dice)
 
     @staticmethod
     def fullHouse(d1, d2, d3, d4, d5):

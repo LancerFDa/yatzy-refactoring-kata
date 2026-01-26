@@ -77,13 +77,13 @@ class Yatzy:
     def fours(self):
         return self.calculate_points(Pips.FOUR.value, *self.dice)
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+        return self.calculate_points(Pips.FIVE.value, *self.dice)  
 
     def sixes(self):
         sum = 0

@@ -85,12 +85,13 @@ class Yatzy:
     def fives(self):
         return self.calculate_points(Pips.FIVE.value, *self.dice)  
 
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+        return self.calculate_points(Pips.SIX.value, *self.dice)
 
     def score_pair(self, d1, d2, d3, d4, d5):
         counts = [0] * 6

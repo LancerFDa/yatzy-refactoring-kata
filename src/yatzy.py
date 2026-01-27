@@ -94,32 +94,33 @@ class Yatzy:
         return self.calculate_points(Pips.SIX.value, *self.dice)
 
 
-    '''
-    Rename a variable with a clearer name
-    The rutine was too long
-    '''
     @classmethod
-    def score_pair(*dice):
-        for die in Pips.reversedValues():
-            if dice.count(die) >= Hands.PAIR.value:
-                return die * 2
-        return 0
-
-    '''
-    Rename a variable with a clearer name
-    The rutine was too long
-    '''
-    @staticmethod
-    def two_pair(*dice):
+    def compare_pairs(cls, pairs_needed, *dice):
         score = 0
         pair_count = 0
         for die in Pips.reversedValues():
             if dice.count(die) >= Hands.PAIR.value:
                 score += die * 2
                 pair_count += 1
-                if pair_count >= Hands.PAIR.value:
+                if pair_count >= pairs_needed:
                     return score
         return 0
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @classmethod
+    def score_pair(cls, *dice):
+        return cls.compare_pairs(1, *dice)
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @classmethod
+    def two_pair(cls, *dice):
+        return cls.compare_pairs(2, *dice)
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):

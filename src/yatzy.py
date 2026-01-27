@@ -104,6 +104,10 @@ class Yatzy:
             if dice.count(die) >= Hands.PAIR.value:
                 return die * 2
 
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def two_pair(*dice):
         score = 0
@@ -112,7 +116,7 @@ class Yatzy:
             if dice.count(die) >= Hands.PAIR.value:
                 score += die * 2
                 pair_count += 1
-                if pair_count >= 2:
+                if pair_count >= Hands.PAIR.value:
                     return score
 
     @staticmethod

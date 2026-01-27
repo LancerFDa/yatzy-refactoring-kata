@@ -103,6 +103,7 @@ class Yatzy:
         for die in Pips.reversedValues():
             if dice.count(die) >= Hands.PAIR.value:
                 return die * 2
+        return 0
 
     '''
     Rename a variable with a clearer name
@@ -118,6 +119,7 @@ class Yatzy:
                 pair_count += 1
                 if pair_count >= Hands.PAIR.value:
                     return score
+        return 0
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):

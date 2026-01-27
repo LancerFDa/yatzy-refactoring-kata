@@ -22,6 +22,8 @@ class Pips(Enum):
     def minus(cls, pip):
         return set(cls.values()) - { pip.value }
 
+class Hands(Enum):
+    PAIR = 2
 
 if __name__ == "__main__":
 

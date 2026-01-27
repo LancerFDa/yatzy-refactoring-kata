@@ -1,4 +1,4 @@
-from src.pips import Pips
+from src.pips import Pips, Hands
 class Yatzy:
 
 
@@ -93,38 +93,27 @@ class Yatzy:
     def sixes(self):
         return self.calculate_points(Pips.SIX.value, *self.dice)
 
-    def score_pair(self, d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6 - at - 1] == 2):
-                return (6 - at) * 2
-        return 0
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @classmethod
+    def score_pair(*dice):
+        for die in Pips.reversedValues():
+            if dice.count(die) >= Hands.PAIR.value:
+                return die * 2
 
     @staticmethod
-    def two_pair(d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        n = 0
+    def two_pair(*dice):
         score = 0
-        for i in range(6):
-            if (counts[6 - i - 1] >= 2):
-                n = n + 1
-                score += (6 - i)
-
-        if (n == 2):
-            return score * 2
-        else:
-            return 0
+        pair_count = 0
+        for die in Pips.reversedValues():
+            if dice.count(die) >= Hands.PAIR.value:
+                score += die * 2
+                pair_count += 1
+                if pair_count >= 2:
+                    return score
 
     @staticmethod
     def four_of_a_kind(_1, _2, d3, d4, d5):

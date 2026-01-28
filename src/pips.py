@@ -24,6 +24,7 @@ class Pips(Enum):
 
 class Hands(Enum):
     PAIR = 2
+    FOUR_OF_A_KIND = 4
 
 if __name__ == "__main__":
 

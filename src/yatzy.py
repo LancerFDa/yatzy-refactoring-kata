@@ -23,7 +23,9 @@ class Yatzy:
             return 50
         return 0
 
-
+    '''
+    Extracted common logic from ones, twos, threes
+    '''
     @staticmethod
     def calculate_points(pips, *dice):
         chance_score = 0
@@ -93,7 +95,9 @@ class Yatzy:
     def sixes(self):
         return self.calculate_points(Pips.SIX.value, *self.dice)
 
-
+    '''
+    Extracted common logic from score_pair and two_pair
+    '''
     @classmethod
     def compare_pairs(cls, pairs_needed, *dice):
         score = 0
@@ -133,6 +137,10 @@ class Yatzy:
                 return die * 4
         return 0
 
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
     @staticmethod
     def three_of_a_kind(*dice):
         for die in Pips.reversedValues():
@@ -140,7 +148,9 @@ class Yatzy:
                 return die * 3
         return 0
 
-
+    '''
+    Extracted common logic from small_straight and large_straight
+    '''
     @staticmethod
     def calculate_straights(*dice):
         sorted_dice = sorted(dice)

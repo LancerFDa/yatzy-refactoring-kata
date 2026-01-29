@@ -133,14 +133,13 @@ class Yatzy:
         return cls.compare_pairs(2, *dice)
 
     '''
-    Rename a variable with a clearer name
-    The rutine was too long
+    Extracted common logic from four_of_a_kind and three_of_a_kind
     '''
     @staticmethod
-    def four_of_a_kind(*dice):
+    def compare_number_of_a_kind(pip, *dice):
         for die in Pips.reversedValues():
-            if dice.count(die) >= Hands.FOUR_OF_A_KIND.value:
-                return die * 4
+            if dice.count(die) >= pip:
+                return die * pip
         return Yatzy.ZERO
 
     '''
@@ -148,11 +147,16 @@ class Yatzy:
     The rutine was too long
     '''
     @staticmethod
+    def four_of_a_kind(*dice):
+        return Yatzy.compare_number_of_a_kind(Hands.FOUR_OF_A_KIND.value, *dice)
+
+    '''
+    Rename a variable with a clearer name
+    The rutine was too long
+    '''
+    @staticmethod
     def three_of_a_kind(*dice):
-        for die in Pips.reversedValues():
-            if dice.count(die) >= Hands.THREE_OF_A_KIND.value:
-                return die * 3
-        return Yatzy.ZERO
+        return Yatzy.compare_number_of_a_kind(Hands.THREE_OF_A_KIND.value, *dice)
 
     '''
     Extracted common logic from small_straight and large_straight

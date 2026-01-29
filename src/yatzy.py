@@ -93,8 +93,8 @@ class Yatzy:
     Rename a variable with a clearer name
     The rutine was too long
     '''
-    def sixes(self):
-        return self.calculate_points(Pips.SIX.value, *self.dice)
+    def sixes(*dice):
+        return Yatzy.calculate_points(Pips.SIX.value, *dice)
 
     '''
     Extracted common logic from score_pair and two_pair

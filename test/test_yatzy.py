@@ -33,6 +33,7 @@ def test_2s():
 def test_threes():
     assert 6 == Yatzy.threes(1, 2, 3, 2, 3)
     assert 12 == Yatzy.threes(2, 3, 3, 3, 3)
+    assert 0 == Yatzy.threes(2, 1, 5, 4, 6)
 
 
 def test_fours():

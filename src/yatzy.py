@@ -2,6 +2,11 @@ from src.pips import Pips, Hands
 class Yatzy:
 
 
+    YATZY_HAND_SCORE = 50
+    LARGE_STRAIGHT = 20
+    SMALL_STRAIGHT = 15
+    ZERO = 0
+
     '''
     Rename a variable with a clearer name
     The rutine was too long
@@ -18,10 +23,10 @@ class Yatzy:
     @staticmethod
     def yatzy(dice):
         if not dice:
-            return 0
+            return Yatzy.ZERO
         if len(set(dice)) == 1:
-            return 50
-        return 0
+            return Yatzy.YATZY_HAND_SCORE
+        return Yatzy.ZERO
 
     '''
     Extracted common logic from ones, twos, threes
@@ -109,7 +114,7 @@ class Yatzy:
                 pair_count += 1
                 if pair_count >= pairs_needed:
                     return score
-        return 0
+        return Yatzy.ZERO
 
     '''
     Rename a variable with a clearer name
@@ -136,7 +141,7 @@ class Yatzy:
         for die in Pips.reversedValues():
             if dice.count(die) >= Hands.FOUR_OF_A_KIND.value:
                 return die * 4
-        return 0
+        return Yatzy.ZERO
 
     '''
     Rename a variable with a clearer name
@@ -147,7 +152,7 @@ class Yatzy:
         for die in Pips.reversedValues():
             if dice.count(die) >= Hands.THREE_OF_A_KIND.value:
                 return die * 3
-        return 0
+        return Yatzy.ZERO
 
     '''
     Extracted common logic from small_straight and large_straight
@@ -156,10 +161,10 @@ class Yatzy:
     def calculate_straights(*dice):
         sorted_dice = sorted(dice)
         if sorted_dice == [1, 2, 3, 4, 5]:
-            return 15
+            return Yatzy.SMALL_STRAIGHT
         if sorted_dice == [2, 3, 4, 5, 6]:
-            return 20
-        return 0
+            return Yatzy.LARGE_STRAIGHT
+        return Yatzy.ZERO
 
 
     '''
@@ -194,4 +199,4 @@ class Yatzy:
             second_die = unique_dice.pop()
             if (dice.count(first_die) == THREE_OF_A_KIND and dice.count(second_die) == PAIR):
                 return sum(dice)
-        return 0
+        return Yatzy.ZERO

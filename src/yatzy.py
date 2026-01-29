@@ -84,8 +84,9 @@ class Yatzy:
     Rename a variable with a clearer name
     The rutine was too long
     '''
-    def fives(self):
-        return self.calculate_points(Pips.FIVE.value, *self.dice)  
+    @staticmethod
+    def fives(*dice):
+        return Yatzy.calculate_points(Pips.FIVE.value, *dice)  
 
 
     '''

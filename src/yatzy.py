@@ -29,9 +29,8 @@ class Yatzy:
     @staticmethod
     def calculate_points(pips, *dice):
         chance_score = 0
-        for i, j in enumerate(dice):
-            if dice[i] == pips:
-                i += 1
+        for i in dice:
+            if i == pips:
                 chance_score += pips
         return chance_score
 
@@ -76,8 +75,9 @@ class Yatzy:
     Rename a variable with a clearer name
     The rutine was too long
     '''
-    def fours(self):
-        return self.calculate_points(Pips.FOUR.value, *self.dice)
+    @staticmethod
+    def fours(*dice):
+        return Yatzy.calculate_points(Pips.FOUR.value, *dice)
 
 
     '''
